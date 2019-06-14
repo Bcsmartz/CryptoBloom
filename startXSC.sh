@@ -23,11 +23,9 @@ WORKERNAME=$4 #"Rai-Black-13"
 
 cd $HOME_DIR/Desktop/mine/xmrig/build
 
-export CURR_HOUR="09" #`date +%H`
-echo $CURR_HOUR 
-printf '%s\n' "${CURR_HOUR//[[:0:]]/}"
-${CURR_HOUR##+(0)}
-
+export CURR_HOUR=`date +%H`
+export CURR_HOUR=`expr $CURR_HOUR + 0`
+echo $CURR_HOUR
 if [ $(( $CURR_HOUR % 5 )) -eq 0 ];          # no need for brackets
 then
 	echo "divisible by 5"
