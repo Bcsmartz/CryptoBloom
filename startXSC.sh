@@ -23,40 +23,42 @@ WORKERNAME=$4 #"Rai-Black-13"
 
 cd $HOME_DIR/Desktop/mine/xmrig/build
 
-export CURR_HOUR=`date +%H`
-echo $CURR_HOUR
+export CURR_HOUR='09' #`date +%H`
+echo $CURR_HOUR 
+printf '%s\n' "${CURR_HOUR//[[:0:]]/}"
+
 if [ $(( $CURR_HOUR % 5 )) -eq 0 ];          # no need for brackets
 then
 	echo "divisible by 5"
     timeout "${DURATION}s" ./xmrig -a cryptonight-pico --donate-level 1 \
     -o xsc.cnpool.cc:32593 -u $OBSCURE_AD -p $LOKI_AD --variant 1 -k \
     -o xsc.cnpool.cc:32590 -u $OBSCURE_AD -p $XTNC_AD --variant 1 -k \
-	-o obscure.herominers.com:10480 -u $OBSCURE_AD -p obscure-13 --variant 1 -k \
-	-o xsc.luckypool.io:8866 -u $OBSCURE_AD -p obscure-13 --variant 1 -k \
+	-o obscure.herominers.com:10480 -u $OBSCURE_AD -p obscure-$WORKERNAME --variant 1 -k \
+	-o xsc.luckypool.io:8866 -u $OBSCURE_AD -p obscure-$WORKERNAME --variant 1 -k \
 	--max-cpu-usage $CPU_USE --cpu-priority $CPU_PRI > $HOME_DIR/Desktop/mine/recordXSCs.log 2>&1 &
 elif [ $(( $CURR_HOUR % 3 )) -eq 0 ];          # no need for brackets
 then
     echo "divisible by 3"
     timeout "${DURATION}s" ./xmrig -a cryptonight-pico --donate-level 1 \
     -o xsc.cnpool.cc:32590 -u $OBSCURE_AD -p $XTNC_AD --variant 1 -k \
-	-o obscure.herominers.com:10480 -u $OBSCURE_AD -p obscure-13 --variant 1 -k \
+	-o obscure.herominers.com:10480 -u $OBSCURE_AD -p obscure-$WORKERNAME --variant 1 -k \
 	-o xsc.cnpool.cc:32593 -u $OBSCURE_AD -p $LOKI_AD --variant 1 -k \
-	-o xsc.luckypool.io:8866 -u $OBSCURE_AD -p obscure-13 --variant 1 -k \
+	-o xsc.luckypool.io:8866 -u $OBSCURE_AD -p obscure-$WORKERNAME --variant 1 -k \
 	--max-cpu-usage $CPU_USE --cpu-priority $CPU_PRI > $HOME_DIR/Desktop/mine/recordXSCs.log 2>&1 &
 elif [ $(( $CURR_HOUR % 2 )) -eq 0 ];          # no need for brackets
 then
 	echo "divisible by 2"
     timeout "${DURATION}s" ./xmrig -a cryptonight-pico --donate-level 1 \
-	-o obscure.herominers.com:10480 -u $OBSCURE_AD -p obscure-13 --variant 1 -k \
+	-o obscure.herominers.com:10480 -u $OBSCURE_AD -p obscure-$WORKERNAME --variant 1 -k \
 	-o xsc.cnpool.cc:32590 -u $OBSCURE_AD -p $XTNC_AD --variant 1 -k \
 	-o xsc.cnpool.cc:32593 -u $OBSCURE_AD -p $LOKI_AD --variant 1 -k \
-	-o xsc.luckypool.io:8866 -u $OBSCURE_AD -p obscure-13 --variant 1 -k \
+	-o xsc.luckypool.io:8866 -u $OBSCURE_AD -p obscure-$WORKERNAME --variant 1 -k \
 	--max-cpu-usage $CPU_USE --cpu-priority $CPU_PRI > $HOME_DIR/Desktop/mine/recordXSCs.log 2>&1 &
 else
     echo "not divisible - Default"
     timeout "${DURATION}s" ./xmrig -a cryptonight-pico --donate-level 1 \
-    -o xsc.luckypool.io:8866 -u $OBSCURE_AD -p obscure-13 --variant 1 -k \
-    -o obscure.herominers.com:10480 -u $OBSCURE_AD -p obscure-13 --variant 1 -k \
+    -o xsc.luckypool.io:8866 -u $OBSCURE_AD -p obscure-$WORKERNAME --variant 1 -k \
+    -o obscure.herominers.com:10480 -u $OBSCURE_AD -p obscure-$WORKERNAME --variant 1 -k \
     -o xsc.cnpool.cc:32593 -u $OBSCURE_AD -p $LOKI_AD --variant 1 -k \
     -o xsc.cnpool.cc:32590 -u $OBSCURE_AD -p $XTNC_AD --variant 1 -k \
 	--max-cpu-usage $CPU_USE --cpu-priority $CPU_PRI > $HOME_DIR/Desktop/mine/recordXSCs.log 2>&1 &
