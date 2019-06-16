@@ -31,19 +31,8 @@ echo $CURR_HOUR
 
 if [ $(( $CURR_HOUR % 5 )) -eq 0 ];          # no need for brackets
 then
-	echo "divisible by 5"
-    timeout "${DURATION}s" ./xmrig -a cryptonight-lite --donate-level 1 \
-	-o pool.semipool.com:22287 -u $ARMS_AD+$DIFF -p $AEON_AD-${WORKERNAME} --variant 1 -k \
-	-o aeon.ingest.cryptoknight.cc:5541 -u $AEON_AD.$DIFF -p $WORKERNAME --variant 1 -k \
-	-o pool.aeonminingpool.com:3333 -u $AEON_AD -p $WORKERNAME --variant 1 -k \
-    -o aeon.pool.gntl.co.uk:2222 -u $AEON_AD+$DIFF -p $WORKERNAME:bczmarts@gmail.com --variant 1 -k \
-	-o pool.aeon.hashvault.pro:3333 -u $AEON_AD -p $WORKERNAME:bczmarts@gmail.com --variant 1 -k \
-	-o aeon.pooltupi.com:3333 -u $AEON_AD -p $WORKERNAME --variant 1 -k \
-	--max-cpu-usage $CPU_USE --cpu-priority $CPU_PRI -t 1 > $HOME_DIR/Desktop/mine/recordAEONs.log 2>&1 &
-elif [ $(( $CURR_HOUR % 3 )) -eq 0 ];          # no need for brackets
-then
     # Best
-	echo "divisible by 3"
+	echo "divisible by 5"
     timeout "${DURATION}s" ./xmrig -a cryptonight-lite --donate-level 1 \
     -o aeon.ingest.cryptoknight.cc:5541 -u $AEON_AD.$DIFF -p $WORKERNAME --variant 1 -k \
     -o aeon.pool.gntl.co.uk:2222 -u $AEON_AD+$DIFF -p $WORKERNAME:bczmarts@gmail.com --variant 1 -k \
@@ -51,7 +40,18 @@ then
 	-o pool.semipool.com:22287 -u $ARMS_AD+$DIFF -p $AEON_AD-${WORKERNAME} --variant 1 -k \
 	-o pool.aeon.hashvault.pro:3333 -u $AEON_AD -p $WORKERNAME:bczmarts@gmail.com --variant 1 -k \
 	-o aeon.pooltupi.com:3333 -u $AEON_AD -p $WORKERNAME --variant 1 -k \
-	--max-cpu-usage $CPU_USE --cpu-priority $CPU_PRI -t 1 > $HOME_DIR/Desktop/mine/recordAEONs.log 2>&1 &
+	--max-cpu-usage $CPU_USE --cpu-priority $CPU_PRI -t $CPU_PRI > $HOME_DIR/Desktop/mine/recordAEONs.log 2>&1 &
+elif [ $(( $CURR_HOUR % 3 )) -eq 0 ];          # no need for brackets
+then
+	echo "divisible by 4"
+    timeout "${DURATION}s" ./xmrig -a cryptonight-lite --donate-level 1 \
+	-o pool.semipool.com:22287 -u $ARMS_AD+$DIFF -p $AEON_AD-${WORKERNAME} --variant 1 -k \
+	-o aeon.ingest.cryptoknight.cc:5541 -u $AEON_AD.$DIFF -p $WORKERNAME --variant 1 -k \
+	-o pool.aeonminingpool.com:3333 -u $AEON_AD -p $WORKERNAME --variant 1 -k \
+    -o aeon.pool.gntl.co.uk:2222 -u $AEON_AD+$DIFF -p $WORKERNAME:bczmarts@gmail.com --variant 1 -k \
+	-o pool.aeon.hashvault.pro:3333 -u $AEON_AD -p $WORKERNAME:bczmarts@gmail.com --variant 1 -k \
+	-o aeon.pooltupi.com:3333 -u $AEON_AD -p $WORKERNAME --variant 1 -k \
+	--max-cpu-usage $CPU_USE --cpu-priority $CPU_PRI -t $CPU_PRI > $HOME_DIR/Desktop/mine/recordAEONs.log 2>&1 &
 elif [ $(( $CURR_HOUR % 2 )) -eq 0 ];          # no need for brackets
 then
 	echo "divisible by 2"
@@ -62,7 +62,7 @@ then
 	-o pool.semipool.com:22287 -u $ARMS_AD+$DIFF -p $AEON_AD-${WORKERNAME} --variant 1 -k \
 	-o pool.aeon.hashvault.pro:3333 -u $AEON_AD -p $WORKERNAME:bczmarts@gmail.com --variant 1 -k \
 	-o aeon.pooltupi.com:3333 -u $AEON_AD -p $WORKERNAME --variant 1 -k \
-	--max-cpu-usage $CPU_USE --cpu-priority $CPU_PRI -t 1 > $HOME_DIR/Desktop/mine/recordAEONs.log 2>&1 &
+	--max-cpu-usage $CPU_USE --cpu-priority $CPU_PRI -t $CPU_PRI > $HOME_DIR/Desktop/mine/recordAEONs.log 2>&1 &
 else
     echo "not divisible - Default"
     timeout "${DURATION}s" ./xmrig -a cryptonight-lite --donate-level 1 \
@@ -72,7 +72,7 @@ else
 	-o pool.aeonminingpool.com:3333 -u $AEON_AD -p $WORKERNAME --variant 1 -k \
 	-o aeon.ingest.cryptoknight.cc:5541 -u $AEON_AD.$DIFF -p $WORKERNAME --variant 1 -k \
 	-o aeon.pooltupi.com:3333 -u $AEON_AD -p $WORKERNAME --variant 1 -k \
-	--max-cpu-usage $CPU_USE --cpu-priority $CPU_PRI -t 1 > $HOME_DIR/Desktop/mine/recordAEONs.log 2>&1 &
+	--max-cpu-usage $CPU_USE --cpu-priority $CPU_PRI -t $CPU_PRI > $HOME_DIR/Desktop/mine/recordAEONs.log 2>&1 &
 fi
 
 cd $HOME_DIR/Desktop/mine/

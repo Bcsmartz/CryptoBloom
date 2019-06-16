@@ -36,7 +36,7 @@ then
     -o loki.cnpool.cc:23333 -u $LOKI_AD.${DIFF}@${WORKERNAME} -p $TRTL_AD --variant 1 -k \
 	-o loki.miner.rocks:4005 -u $LOKI_AD -p w=$WORKERNAME --variant 1 -k \
 	-o ca.loki.miner.rocks:4005 -u $LOKI_AD -p w=$WORKERNAME --variant 1 -k \
-	--max-cpu-usage $CPU_USE --cpu-priority $CPU_PRI -t 1 > $HOME_DIR/Desktop/mine/recordLOKIs.log 2>&1 &
+	--max-cpu-usage $CPU_USE --cpu-priority $CPU_PRI -t $CPU_PRI > $HOME_DIR/Desktop/mine/recordLOKIs.log 2>&1 &
 elif [ $(( $CURR_HOUR % 3 )) -eq 0 ];          # no need for brackets
 then
     echo "divisible by 3"
@@ -48,7 +48,7 @@ then
     -o plenteum.herominers.com:10431 -u $LOKI_AD -p $PLE_AD@${WORKERNAME} --variant 1 -k \
 	-o loki.miner.rocks:4005 -u $LOKI_AD -p w=$WORKERNAME --variant 1 -k \
 	-o ca.loki.miner.rocks:4005 -u $LOKI_AD -p w=$WORKERNAME --variant 1 -k \
-	--max-cpu-usage $CPU_USE --cpu-priority $CPU_PRI -t 1 > $HOME_DIR/Desktop/mine/recordLOKIs.log 2>&1 &
+	--max-cpu-usage $CPU_USE --cpu-priority $CPU_PRI -t $CPU_PRI > $HOME_DIR/Desktop/mine/recordLOKIs.log 2>&1 &
 elif [ $(( $CURR_HOUR % 2 )) -eq 0 ];          # no need for brackets
 then
 	echo "divisible by 2"
@@ -60,7 +60,7 @@ then
     -o loki.cnpool.cc:23333 -u $LOKI_AD.${DIFF}@${WORKERNAME} -p $TRTL_AD --variant 1 -k \
     -o lokiturtle.herominers.com:10521 -u $LOKI_AD -p $TRTL_AD --variant 1 -k \
 	-o ca.loki.miner.rocks:4005 -u $LOKI_AD -p w=$WORKERNAME --variant 1 -k \
-	--max-cpu-usage $CPU_USE --cpu-priority $CPU_PRI -t 1 > $HOME_DIR/Desktop/mine/recordLOKIs.log 2>&1 &
+	--max-cpu-usage $CPU_USE --cpu-priority $CPU_PRI -t $CPU_PRI > $HOME_DIR/Desktop/mine/recordLOKIs.log 2>&1 &
 else
     echo "not divisible - Default"
     timeout "${DURATION}s" ./xmrig -a cryptonight-pico --donate-level 1 \
@@ -71,7 +71,7 @@ else
     -o pool.loki.hashvault.pro:3333 -u $LOKI_AD:$TRTL_AD -p $WORKERNAME:bczmarts@gmail.com --variant 1 -k \
     -o lokiturtle.herominers.com:10521 -u $LOKI_AD -p $TRTL_AD@${WORKERNAME} --variant 1 -k \
 	-o ca.loki.miner.rocks:4005 -u $LOKI_AD -p w=$WORKERNAME --variant 1 -k \
-	--max-cpu-usage $CPU_USE --cpu-priority $CPU_PRI -t 1 > $HOME_DIR/Desktop/mine/recordLOKIs.log 2>&1 &
+	--max-cpu-usage $CPU_USE --cpu-priority $CPU_PRI -t $CPU_PRI > $HOME_DIR/Desktop/mine/recordLOKIs.log 2>&1 &
 fi
 
 cd $HOME_DIR/Desktop/mine/
