@@ -31,17 +31,7 @@ export CURR_HOUR=`expr $CURR_HOUR + 0`
 echo $CURR_HOUR
 if [ $(( $CURR_HOUR % 3 )) -eq 0 ];          # no need for brackets
 then
-	#Best
-    echo "divisible by 3"
-    timeout "${DURATION}s" ./xmrig -a cryptonight-pico --donate-level 1 \
-    -o xsc.cnpool.cc:32593 -u $OBSCURE_AD.${DIFF}@${WORKERNAME} -p $LOKI_AD --variant 1 -k \
-    -o xsc.cnpool.cc:32590 -u $OBSCURE_AD.${DIFF}@${WORKERNAME} -p $XTNC_AD --variant 1 -k \
-	-o obscure.herominers.com:10480 -u $OBSCURE_AD.$DIFF -p obscure-$WORKERNAME --variant 1 -k \
-	-o xsc.luckypool.io:8866 -u $OBSCURE_AD.${DIFF} -p obscure-$WORKERNAME --variant 1 -k \
-	--max-cpu-usage $CPU_USE --cpu-priority $CPU_PRI -t $CPU_PRI > $HOME_DIR/Desktop/mine/recordXSCs.log 2>&1 &
-elif [ $(( $CURR_HOUR % 2 )) -eq 0 ];          # no need for brackets
-then
-	echo "divisible by 2"
+	echo "divisible by 3"
     timeout "${DURATION}s" ./xmrig -a cryptonight-pico --donate-level 1 \
 	-o xsc.cnpool.cc:32590 -u $OBSCURE_AD.${DIFF}@${WORKERNAME} -p $XTNC_AD --variant 1 -k \
 	-o obscure.herominers.com:10480 -u $OBSCURE_AD.$DIFF -p obscure-$WORKERNAME --variant 1 -k \
