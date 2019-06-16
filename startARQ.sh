@@ -21,6 +21,7 @@ WORKERNAME=$4 #"Rai-Black-13"
 
 cd $HOME_DIR/Desktop/mine/xmrig/build
 
+export DIFF=350
 export CURR_HOUR=`date +%H`
 export CURR_HOUR=`expr $CURR_HOUR + 0`
 echo $CURR_HOUR
@@ -32,16 +33,16 @@ then
 	timeout "${DURATION}s" ./xmrig -a cryptonight-pico --donate-level 1 \
 	-o arq.ingest.cryptoknight.cc:3731 -u $ARQ_AD -p $WORKERNAME --variant 1 -k \
 	-o hydra.xripx.com:9692 -u $ARQ_AD -p $PLE_AD --variant 1 -k \
-	-o arqple.herominers.com:10630 -u $ARQ_AD -p $PLE_AD --variant 1 -k \
+	-o arqple.herominers.com:10630 -u $ARQ_AD.$DIFF -p $PLE_AD@${WORKERNAME}  --variant 1 -k \
 	--max-cpu-usage $CPU_USE --cpu-priority $CPU_PRI -t 1 > $HOME_DIR/Desktop/mine/recordARQs.log 2>&1 &
 
 elif [ $(( $CURR_HOUR % 2 )) -eq 0 ];          # no need for brackets
 then
 	echo "divisible by 2"
     timeout "${DURATION}s" ./xmrig -a cryptonight-pico --donate-level 1 \
-	-o arqple.herominers.com:10630 -u $ARQ_AD -p $PLE_AD --variant 1 -k \
+	-o arqple.herominers.com:10630 -u $ARQ_AD -p $PLE_AD@${WORKERNAME} --variant 1 -k \
 	-o hydra.xripx.com:9692 -u $ARQ_AD -p $PLE_AD --variant 1 -k \
-	-o arq.ingest.cryptoknight.cc:3731 -u $ARQ_AD -p $WORKERNAME --variant 1 -k \
+	-o arq.ingest.cryptoknight.cc:3731 -u $ARQ_AD.$DIFF -p $WORKERNAME --variant 1 -k \
 	--max-cpu-usage $CPU_USE --cpu-priority $CPU_PRI -t 1 > $HOME_DIR/Desktop/mine/recordARQs.log 2>&1 &
 
 else
@@ -49,7 +50,7 @@ else
     timeout "${DURATION}s" ./xmrig -a cryptonight-pico --donate-level 1 \
     -o hydra.xripx.com:9692 -u $ARQ_AD -p $PLE_AD --variant 1 -k \
     -o arq.ingest.cryptoknight.cc:3731 -u $ARQ_AD -p $WORKERNAME --variant 1 -k \
-	-o arqple.herominers.com:10630 -u $ARQ_AD -p $PLE_AD --variant 1 -k \
+	-o arqple.herominers.com:10630 -u $ARQ_AD.$DIFF -p $PLE_AD@${WORKERNAME} --variant 1 -k \
 	--max-cpu-usage $CPU_USE --cpu-priority $CPU_PRI -t 1 > $HOME_DIR/Desktop/mine/recordARQs.log 2>&1 &
 
 fi
