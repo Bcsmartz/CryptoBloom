@@ -43,7 +43,7 @@ then
 	--max-cpu-usage $CPU_USE --cpu-priority $CPU_PRI -t $CPU_PRI > $HOME_DIR/Desktop/mine/recordAEONs.log 2>&1 &
 elif [ $(( $CURR_HOUR % 3 )) -eq 0 ];          # no need for brackets
 then
-	echo "divisible by 4"
+	echo "divisible by 3"
     timeout "${DURATION}s" ./xmrig -a cryptonight-lite --donate-level 1 \
 	-o pool.semipool.com:22287 -u $ARMS_AD+$DIFF -p $AEON_AD-${WORKERNAME} --variant 1 -k \
 	-o aeon.ingest.cryptoknight.cc:5541 -u $AEON_AD.$DIFF -p $WORKERNAME --variant 1 -k \
