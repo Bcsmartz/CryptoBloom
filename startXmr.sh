@@ -21,6 +21,7 @@ WORKERNAME=$4 #"Rai-Black-13"
 
 cd $HOME_DIR/Desktop/mine/xmrig/build
 
+export DIFF=500
 export CURR_HOUR=`date +%H`
 export CURR_HOUR=`expr $CURR_HOUR + 0`
 echo $CURR_HOUR
@@ -29,8 +30,8 @@ then
 	echo "divisible by 5"
     timeout "${DURATION}s" ./xmrig --donate-level 1 \
     -o pool.supportxmr.com:5555 -u $MONERO_AD -p $WORKERNAME:bczmarts@gmail.com --variant 1 -k \
-    -o monero.ingest.cryptoknight.cc:4441 -u $MONERO_AD -p $WORKERNAME --variant 1 -k \
-	-o monero.herominers.com:10190 -u $MONERO_AD -p $WORKERNAME --variant 1 -k \
+    -o monero.ingest.cryptoknight.cc:4441 -u $MONERO_AD.$DIFF -p $WORKERNAME --variant 1 -k \
+	-o monero.herominers.com:10190 -u $MONERO_AD.$DIFF -p $WORKERNAME --variant 1 -k \
 	-o pool.hashvault.pro:3333 -u $MONERO_AD -p $WORKERNAME:bczmarts@gmail.com --variant 1 -k \
 	-o xmr.coinfoundry.org:3032 -u ${MONERO_AD}.$WORKERNAME -p x --variant 1 -k \
 	-o xmr-us.dwarfpool.com:8005 -u $MONERO_AD -p $WORKERNAME --variant 1 -k \
@@ -40,8 +41,8 @@ elif [ $(( $CURR_HOUR % 3 )) -eq 0 ];          # no need for brackets
 then
     echo "divisible by 3"
     timeout "${DURATION}s" ./xmrig --donate-level 1 \
-	-o monero.ingest.cryptoknight.cc:4441 -u $MONERO_AD -p $WORKERNAME --variant 1 -k \
-	-o monero.herominers.com:10190 -u $MONERO_AD -p $WORKERNAME --variant 1 -k \
+	-o monero.ingest.cryptoknight.cc:4441 -u $MONERO_AD.$DIFF -p $WORKERNAME --variant 1 -k \
+	-o monero.herominers.com:10190 -u $MONERO_AD.$DIFF -p $WORKERNAME --variant 1 -k \
 	-o pool.hashvault.pro:3333 -u $MONERO_AD -p $WORKERNAME:bczmarts@gmail.com --variant 1 -k \
 	-o pool.supportxmr.com:5555 -u $MONERO_AD -p $WORKERNAME:bczmarts@gmail.com --variant 1 -k \
 	-o xmr.coinfoundry.org:3032 -u ${MONERO_AD}.$WORKERNAME -p x --variant 1 -k \
@@ -52,10 +53,10 @@ elif [ $(( $CURR_HOUR % 2 )) -eq 0 ];          # no need for brackets
 then
 	echo "divisible by 2"
     timeout "${DURATION}s" ./xmrig --donate-level 1 \
-	-o monero.herominers.com:10190 -u $MONERO_AD -p $WORKERNAME --variant 1 -k \
+	-o monero.herominers.com:10190 -u $MONERO_AD.$DIFF -p $WORKERNAME --variant 1 -k \
 	-o pool.hashvault.pro:3333 -u $MONERO_AD -p $WORKERNAME:bczmarts@gmail.com --variant 1 -k \
 	-o pool.supportxmr.com:5555 -u $MONERO_AD -p $WORKERNAME:bczmarts@gmail.com --variant 1 -k \
-	-o monero.ingest.cryptoknight.cc:4441 -u $MONERO_AD -p $WORKERNAME --variant 1 -k \
+	-o monero.ingest.cryptoknight.cc:4441 -u $MONERO_AD.$DIFF -p $WORKERNAME --variant 1 -k \
 	-o xmr.coinfoundry.org:3032 -u ${MONERO_AD}.$WORKERNAME -p x --variant 1 -k \
 	-o xmr-us.dwarfpool.com:8005 -u $MONERO_AD -p $WORKERNAME --variant 1 -k \
 	-o xmr.pool.minergate.com:45700 -u bczmarts@gmail.com -p x --variant 1 -k \
@@ -65,8 +66,8 @@ else
     timeout "${DURATION}s" ./xmrig --donate-level 1 \
     -o pool.hashvault.pro:3333 -u $MONERO_AD -p $WORKERNAME:bczmarts@gmail.com --variant 1 -k \
     -o pool.supportxmr.com:5555 -u $MONERO_AD -p $WORKERNAME:bczmarts@gmail.com --variant 1 -k \
-	-o monero.ingest.cryptoknight.cc:4441 -u $MONERO_AD -p $WORKERNAME --variant 1 -k \
-	-o monero.herominers.com:10190 -u $MONERO_AD -p $WORKERNAME--variant 1 -k \
+	-o monero.ingest.cryptoknight.cc:4441 -u $MONERO_AD.$DIFF -p $WORKERNAME --variant 1 -k \
+	-o monero.herominers.com:10190 -u $MONERO_AD.$DIFF -p $WORKERNAME--variant 1 -k \
 	-o xmr.coinfoundry.org:3032 -u ${MONERO_AD}.$WORKERNAME -p x --variant 1 -k \
 	-o xmr-us.dwarfpool.com:8005 -u $MONERO_AD -p $WORKERNAME --variant 1 -k \
 	-o xmr.pool.minergate.com:45700 -u bczmarts@gmail.com -p x --variant 1 -k \
