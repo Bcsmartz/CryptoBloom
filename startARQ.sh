@@ -22,7 +22,9 @@ WORKERNAME=$4 #"Rai-Black-13"
 cd $HOME_DIR/Desktop/mine/xmrig/build
 
 export DIFF=350
-
+export CURR_HOUR=`date +%H`
+export CURR_HOUR=`expr $CURR_HOUR + 0`
+echo $CURR_HOUR
 if [ $(( $CURR_HOUR % 2 )) -eq 0 ];          # no need for brackets
 then
 	timeout "${DURATION}s" ./xmrig -a cryptonight-pico --donate-level 1 \
