@@ -28,7 +28,7 @@ echo $CURR_HOUR
 if [ $(( $CURR_HOUR % 2 )) -eq 0 ];          # no need for brackets
 then
 	# Best
-	echo "not divisible - Default"
+	echo "divisible by 2"
 	timeout "${DURATION}s" ./xmrig -a cryptonight-pico --donate-level 1 \
 	-o xtncple.herominers.com:10620 -u $XTNC_AD.$DIFF -p $PLE_AD@${WORKERNAME} --variant 1 -k \
 	-o hydra.xripx.com:8692 -u $XTNC_AD.$DIFF -p $PLE_AD@${WORKERNAME} --variant 1 -k \
