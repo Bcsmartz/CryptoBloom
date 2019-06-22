@@ -32,7 +32,7 @@ then
 	-o hydra.xripx.com:9692 -u $ARQ_AD.$DIFF -p $PLE_AD@${WORKERNAME} --variant 1 -k \
 	-o arq.ingest.cryptoknight.cc:3731 -u $ARQ_AD.$DIFF -p $WORKERNAME --variant 1 -k \
 	-o arqple.herominers.com:10630 -u $ARQ_AD.$DIFF -p $PLE_AD@${WORKERNAME} --variant 1 -k \
-	-o arq.pool.gntl.co.uk:2222 -U $ARQ_AD.$DIFF -p $WORKERNAME --variant 1 -k \
+	-o arq.pool.gntl.co.uk:2222 -u $ARQ_AD+$DIFF -p $WORKERNAME --variant 1 -k \
 	--max-cpu-usage $CPU_USE --cpu-priority $CPU_PRI -t $CPU_PRI > $HOME_DIR/Desktop/mine/recordARQs.log 2>&1 &
 elif [ $(( $CURR_HOUR % 2 )) -eq 0 ];          # no need for brackets
 then
@@ -40,13 +40,13 @@ then
 	timeout "${DURATION}s" ./xmrig -a cryptonight-pico --donate-level 1 \
 	-o arqple.herominers.com:10630 -u $ARQ_AD.$DIFF -p $PLE_AD@${WORKERNAME} --variant 1 -k \
 	-o hydra.xripx.com:9692 -u $ARQ_AD.$DIFF -p $PLE_AD@${WORKERNAME} --variant 1 -k \
-	-o arq.pool.gntl.co.uk:2222 -U $ARQ_AD.$DIFF -p $WORKERNAME --variant 1 -k \
+	-o arq.pool.gntl.co.uk:2222 -u $ARQ_AD+$DIFF -p $WORKERNAME --variant 1 -k \
 	-o arq.ingest.cryptoknight.cc:3731 -u $ARQ_AD.$DIFF -p $WORKERNAME --variant 1 -k \
 	--max-cpu-usage $CPU_USE --cpu-priority $CPU_PRI -t $CPU_PRI > $HOME_DIR/Desktop/mine/recordARQs.log 2>&1 &
 else
 	echo "not divisible - Default"
 	timeout "${DURATION}s" ./xmrig -a cryptonight-pico --donate-level 1 \
-	-o arq.pool.gntl.co.uk:2222 -U $ARQ_AD.$DIFF -p $WORKERNAME --variant 1 -k \
+	-o arq.pool.gntl.co.uk:2222 -u $ARQ_AD+$DIFF -p $WORKERNAME --variant 1 -k \
 	-o hydra.xripx.com:9692 -u $ARQ_AD.$DIFF -p $PLE_AD@${WORKERNAME} --variant 1 -k \
 	-o arq.ingest.cryptoknight.cc:3731 -u $ARQ_AD.$DIFF -p $WORKERNAME --variant 1 -k \
 	-o arqple.herominers.com:10630 -u $ARQ_AD.$DIFF -p $PLE_AD@${WORKERNAME} --variant 1 -k \
