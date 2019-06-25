@@ -38,6 +38,6 @@ fi
 
 NODES=2
 
-mpiexec -f $HOME/Deskop/machinefile -n $NODES python $HOME/Desktop/mine/CryptoBloom/startCluster.py
+mpiexec -f $HOME/Desktop/machinefile -n $NODES python $HOME/Desktop/mine/CryptoBloom/startCluster.py
 
 exit 0
