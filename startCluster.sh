@@ -38,6 +38,6 @@ fi
 
 NODES=2
 
-mpiexec -f $HOME/Desktop/machinefile -n $NODES python $HOME/Desktop/mine/CryptoBloom/startCluster.py
+/home/rpimpi/mpi-install/bin/mpiexec -f $HOME/Desktop/machinefile -n $NODES python $HOME/Desktop/mine/CryptoBloom/startCluster.py
 
 exit 0
