@@ -9,24 +9,25 @@ export CPU_USE=$1
 export CPU_PRI=$2
 export DURATION=$3 #3600
 export WORKERNAME=$4 #"Rai-Homew-13"
-export CRYPTOMINE='$5' #ticker
+#export CRYPTOMINE=$5 #ticker
+export CRYPTOMINE=$(echo $5 | tr a-z A-Z)
 
-if [[ "${CRYPTOMINE^^}" = "AEON" ]]; then
+if [[ "$CRYPTOMINE" = "AEON" ]]; then
     export CRYPTOMINE='startAeon.sh'
 
-elif [[ "${CRYPTOMINE^^}" = "XMR" ]]; then
+elif [[ "$CRYPTOMINE" = "XMR" ]]; then
     export CRYPTOMINE='startXmr.sh'
 
-elif [[ "${CRYPTOMINE^^}" = "LOKI" ]]; then
+elif [[ "$CRYPTOMINE" = "LOKI" ]]; then
 	export CRYPTOMINE='startLoki.sh'
 
-elif [[ "${CRYPTOMINE^^}" = "XTNC" ]]; then
+elif [[ "$CRYPTOMINE" = "XTNC" ]]; then
     export CRYPTOMINE='startXTNC.sh'
 
-elif [[ "${CRYPTOMINE^^}" = "ARQ" ]]; then
+elif [[ "$CRYPTOMINE" = "ARQ" ]]; then
     export CRYPTOMINE='startARQ.sh'
 
-elif [[ "${CRYPTOMINE^^}" = "XSC" ]]; then
+elif [[ "$CRYPTOMINE" = "XSC" ]]; then
 	export CRYPTOMINE='startXSC.sh'
 
 else
