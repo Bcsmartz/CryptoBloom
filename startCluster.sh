@@ -29,9 +29,11 @@ elif [[ "${CRYPTOMINE^^}" = "XSC" ]]; then
 
 else
 	echo "No ticker match for... $CRYPTOMINE"
+	exit 1
 fi
 
 NODES=2
 
 mpiexec -f $HOME/Deskop/machinefile -n $NODES python $HOME/Desktop/mine/CryptoBloom/startCluster.py
 
+exit 0
