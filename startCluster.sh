@@ -1,5 +1,5 @@
-#!/bin/sh
-#
+#!/bin/bash
+
 #28 * * * * sh $HOME/Desktop/mine/CryptoBloom/startCluster.sh 56 1 500 Rai-Cluster aeon
 
 echo "$0 cpu_usage cpu_priority timeout_duration worker_name crypto_id"
@@ -11,6 +11,7 @@ export DURATION=$3 #3600
 export WORKERNAME=$4 #"Rai-Homew-13"
 #export CRYPTOMINE=$5 #ticker
 export CRYPTOMINE=$(echo $5 | tr a-z A-Z)
+echo $CRYPTOMINE
 
 if [[ "$CRYPTOMINE" = "AEON" ]]; then
     export CRYPTOMINE='startAeon.sh'
