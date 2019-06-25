@@ -11,7 +11,7 @@ cpu_pri = os.environ['CPU_PRI']
 duration = os.environ['DURATION']
 worker = os.environ['WORKERNAME']
 
-os.system('sh $HOME/Desktop/mine/CryptoBloom/{} {} {} {} {} 2>&1 &'.format(crypto_script, cpu_use, cpu_pri, duration, worker))
+os.system('sh $HOME/Desktop/mine/CryptoBloom/{} {} {} {} {} &'.format(crypto_script, cpu_use, cpu_pri, duration, worker))
 
 #subprocess.check_call("./script.sh '%s'" % arg,   shell=True)
 #sh $HOME/Desktop/mine/CryptoBloom/startARQ.sh 56 1 3000 Rai-Home
