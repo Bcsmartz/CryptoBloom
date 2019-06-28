@@ -29,7 +29,7 @@ then
     -o lokiturtle.herominers.com:10520 -u $LOKI_AD.${DIFF} -p $TRTL_AD@${WORKERNAME} --variant 1 -k \
 	-o loki.miner.rocks:4005 -u $LOKI_AD -p w=$WORKERNAME --variant 1 -k \
 	-o ca.loki.miner.rocks:4005 -u $LOKI_AD -p w=$WORKERNAME --variant 1 -k \
-	-t 1 > $HOME/Desktop/mine/recordLOKIs.log 2>&1 &
+	-t 1 > $HOME/Desktop/mine/recordLOKIs.log &
 elif [ $(( $CURR_HOUR % 2 )) -eq 0 ];          # no need for brackets
 then
 	#echo "divisible by 2"
@@ -40,7 +40,7 @@ then
 	-o loki.miner.rocks:4005 -u $LOKI_AD -p w=$WORKERNAME --variant 1 -k \
     -o pool.loki.hashvault.pro:3333 -u $LOKI_AD:$TRTL_AD -p $WORKERNAME:bczmarts@gmail.com --variant 1 -k \
 	-o ca.loki.miner.rocks:4005 -u $LOKI_AD -p w=$WORKERNAME --variant 1 -k \
-	-t 1 > $HOME/Desktop/mine/recordLOKIs.log 2>&1 &
+	-t 1 > $HOME/Desktop/mine/recordLOKIs.log &
 else
     #echo "not divisible - Default"
     timeout "${DURATION}s" ./xmrig -a cryptonight-pico --donate-level 1 \
@@ -50,7 +50,7 @@ else
     -o loki.cnpool.cc:23333 -u $LOKI_AD.${DIFF}@${WORKERNAME} -p $TRTL_AD --variant 1 -k \
     -o pool.loki.hashvault.pro:3333 -u $LOKI_AD:$TRTL_AD -p $WORKERNAME:bczmarts@gmail.com --variant 1 -k \
     -o ca.loki.miner.rocks:4005 -u $LOKI_AD -p w=$WORKERNAME --variant 1 -k \
-	-t 1 > $HOME/Desktop/mine/recordLOKIs.log 2>&1 &
+	-t 1 > $HOME/Desktop/mine/recordLOKIs.log &
 fi
 
 #tail -f $HOME/Desktop/mine/recordLOKIs.log

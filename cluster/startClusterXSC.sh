@@ -22,6 +22,6 @@ timeout "${DURATION}s" ./xmrig -a cryptonight-pico --donate-level 1 \
 -o obscure.herominers.com:10480 -u $OBSCURE_AD.$DIFF -p obscure-$WORKERNAME --variant 1 -k \
 -o xsc.cnpool.cc:32593 -u $OBSCURE_AD.${DIFF}@${WORKERNAME} -p $LOKI_AD --variant 1 -k \
 -o xsc.cnpool.cc:32590 -u $OBSCURE_AD.${DIFF}@${WORKERNAME} -p $XTNC_AD --variant 1 -k \
--t 1 > $HOME/Desktop/mine/recordXSCs.log 2>&1 &
+-t 1 > $HOME/Desktop/mine/recordXSCs.log &
 
 #tail -f $HOME/Desktop/mine/recordXSCs.log

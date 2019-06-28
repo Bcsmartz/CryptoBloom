@@ -29,7 +29,7 @@ then
 	-o hydra.xripx.com:8692 -u $XTNC_AD.$DIFF -p $PLE_AD@${WORKERNAME} --variant 1 -k \
 	-o xtnc.cnpool.cc:32673 -u $XTNC_AD.${DIFF}@${WORKERNAME} -p $PLE_AD --variant 1 -k \
 	-o pool.xtendcash.hashvault.pro:3333 -u $XTNC_AD:$TRTL_AD -p ${WORKERNAME}:bczmarts@gmail.com -k \
-	-t 1 > $HOME/Desktop/mine/recordXTNCs.log 2>&1 &
+	-t 1 > $HOME/Desktop/mine/recordXTNCs.log &
 else
 	# Best
 	echo "not divisible - Default"
@@ -38,7 +38,7 @@ else
 	-o xtncple.herominers.com:10620 -u $XTNC_AD.$DIFF -p $PLE_AD@${WORKERNAME} --variant 1 -k \
 	-o xtnc.cnpool.cc:32673 -u $XTNC_AD.${DIFF}@${WORKERNAME} -p $PLE_AD --variant 1 -k \
 	-o pool.xtendcash.hashvault.pro:3333 -u $XTNC_AD:$TRTL_AD -p ${WORKERNAME}:bczmarts@gmail.com -k \
-	-t 1 > $HOME/Desktop/mine/recordXTNCs.log 2>&1 &
+	-t 1 > $HOME/Desktop/mine/recordXTNCs.log &
 fi
 
 #tail -f $HOME/Desktop/mine/recordXTNCs.log
