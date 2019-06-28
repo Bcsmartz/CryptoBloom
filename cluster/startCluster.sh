@@ -44,7 +44,10 @@ else
 	exit 1
 fi
 
-timeout "${DURATION}s" /home/rpimpi/mpi-install/bin/mpiexec -f $HOME/Desktop/machinefile -n $NODES python $HOME/Desktop/mine/CryptoBloom/cluster/startCluster.py 2>&1 &
-
 echo "Clusters started w/ $NODES workers"
+
+timeout "${DURATION}s" /home/rpimpi/mpi-install/bin/mpiexec -f $HOME/Desktop/machinefile -n $NODES python $HOME/Desktop/mine/CryptoBloom/cluster/startCluster.py
+
+echo "Cluster run ended w/ $NODES workers"
+
 exit 0
