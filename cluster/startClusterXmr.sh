@@ -63,5 +63,5 @@ else
 	-t 1 > $HOME_DIR/Desktop/mine/recordXMRs.log 2>&1 &
 fi
 
-tail -f $HOME_DIR/Desktop/mine/recordXMRs.log
+#tail -f $HOME_DIR/Desktop/mine/recordXMRs.log
 

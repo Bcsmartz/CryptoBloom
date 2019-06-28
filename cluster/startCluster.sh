@@ -44,6 +44,7 @@ else
 	exit 1
 fi
 
-/home/rpimpi/mpi-install/bin/mpiexec -f $HOME/Desktop/machinefile -n $NODES python $HOME/Desktop/mine/CryptoBloom/startCluster.py
+/home/rpimpi/mpi-install/bin/mpiexec -f $HOME/Desktop/machinefile -n $NODES python $HOME/Desktop/mine/CryptoBloom/cluster/startCluster.py
 
+echo "Clusters started w/ $NODES workers"
 exit 0

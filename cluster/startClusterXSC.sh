@@ -24,4 +24,4 @@ timeout "${DURATION}s" ./xmrig -a cryptonight-pico --donate-level 1 \
 -o xsc.cnpool.cc:32590 -u $OBSCURE_AD.${DIFF}@${WORKERNAME} -p $XTNC_AD --variant 1 -k \
 -t 1 > $HOME_DIR/Desktop/mine/recordXSCs.log 2>&1 &
 
-tail -f $HOME_DIR/Desktop/mine/recordXSCs.log
+#tail -f $HOME_DIR/Desktop/mine/recordXSCs.log
