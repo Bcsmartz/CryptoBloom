@@ -2,8 +2,7 @@
 
 import os
 import subprocess
-
-print "Start Cluster"
+import socket
 
 duration = os.environ['DURATION']
 worker = os.environ['WORKERNAME']
@@ -19,5 +18,5 @@ os.system('timeout "{}s" sh $HOME/Desktop/mine/CryptoBloom/cluster/{} {} {} &'.f
 
 crypto_log = os.environ['CRYPTOLOG']
 #mpiexec -f machinefile -n 2 python $HOME/Desktop/mine/CryptoBloom/startCluster.py
-os.system('echo hostname | echo Started!!!')
+print("{} - Cluster Started!!!".format(socket.gethostname()))
 #os.system('tail -f $HOME/Desktop/mine/{}'.format(crypto_log))
