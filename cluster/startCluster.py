@@ -19,5 +19,5 @@ os.system('timeout "{}s" sh $HOME/Desktop/mine/CryptoBloom/cluster/{} {} {} &'.f
 
 crypto_log = os.environ['CRYPTOLOG']
 #mpiexec -f machinefile -n 2 python $HOME/Desktop/mine/CryptoBloom/startCluster.py
-os.system("echo hostname 'Started!!!'")
+os.system('echo hostname | echo Started!!!')
 #os.system('tail -f $HOME/Desktop/mine/{}'.format(crypto_log))

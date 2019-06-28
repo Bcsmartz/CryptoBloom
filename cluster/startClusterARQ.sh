@@ -6,7 +6,7 @@ DURATION=$1 #3600
 WORKERNAME=$2
 
 # PRE PURGE
-rm $HOME/Desktop/mine/recordARQs.log
+rm -f $HOME/Desktop/mine/recordARQs.log
 
 PLE_AD="PLeazPhnC1qXe4Vg4CVoLaFR6vNtkyTvMGoWnRJ8eEP7jTEvFKMyxRf6NMPKisqFo8JDLPT6BuuGoYkQX6xuL74R6svnyi59Su"
 ARQ_AD="ar41hWuB7ePdahum34BkJG8JWjJrRFqim9muTA5CmndHLyCpo6Ja5jGNXoqGHXpYr5gWdux8Nm1q1UiM67XsfC2u32jVR1R1F"

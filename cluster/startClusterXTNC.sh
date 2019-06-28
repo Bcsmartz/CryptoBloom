@@ -6,7 +6,7 @@ DURATION=$1 #3600
 WORKERNAME=$2
 
 # PRE PURGE
-rm $HOME/Desktop/mine/recordXTNCs.log
+rm -f $HOME/Desktop/mine/recordXTNCs.log
 
 XTNC_AD="XtazhWGcozBXaVZGUochAm4VcJgpvLR8hVLJE9EY9VzwBgoWpNhV1GDYbwUthao444C4SKDYi2KR324a84MzgjiKScaBa9viZu5"
 PLE_AD="PLeazPhnC1qXe4Vg4CVoLaFR6vNtkyTvMGoWnRJ8eEP7jTEvFKMyxRf6NMPKisqFo8JDLPT6BuuGoYkQX6xuL74R6svnyi59Su"

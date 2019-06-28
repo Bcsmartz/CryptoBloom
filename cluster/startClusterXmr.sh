@@ -6,7 +6,7 @@ DURATION=$1 #3600
 WORKERNAME=$2
 
 # PRE PURGE
-rm $HOME/Desktop/mine/recordXMRs.log
+rm -f $HOME/Desktop/mine/recordXMRs.log
 
 MONERO_AD="4GdoN7NCTi8a5gZug7PrwZNKjvHFmKeV11L6pNJPgj5QNEHsN6eeX3DaAQFwZ1ufD4LYCZKArktt113W7QjWvQ7CWAMrNRyfdJCPB25AaD"
 

@@ -6,7 +6,7 @@ DURATION=$1 #3600
 WORKERNAME=$2
 
 # PRE PURGE
-rm $HOME/Desktop/mine/recordAEONs.log
+rm -f $HOME/Desktop/mine/recordAEONs.log
 
 # AEON
 AEON_AD="WmtBH7LDfdhUWjRqKUnAuCBEFnsFujhA6DEhq38apF9NbVmBU3UxsVyCbowcVhSfwXdPH7v5AUcVYWQd5BAHZeMx1q91SkN75"
