@@ -1,6 +1,6 @@
 #!/bin/sh
 
-echo $1 $2
+#echo $1 $2
 
 DURATION=$1 #3600
 WORKERNAME=$2

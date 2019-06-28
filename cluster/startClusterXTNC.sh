@@ -1,6 +1,6 @@
 #!/bin/sh
 
-echo $1 $2
+#echo $1 $2
 
 DURATION=$1 #3600
 WORKERNAME=$2
@@ -18,7 +18,7 @@ DIFF=350
 
 CURR_HOUR=`date +%H`
 CURR_HOUR=`expr $CURR_HOUR + 0`
-echo $CURR_HOUR
+#echo $CURR_HOUR
 
 if [ $(( $CURR_HOUR % 2 )) -eq 0 ];          # no need for brackets
 then
