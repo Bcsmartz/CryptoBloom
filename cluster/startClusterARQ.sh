@@ -19,31 +19,28 @@ CURR_HOUR=`date +%H`
 CURR_HOUR=`expr $CURR_HOUR + 0`
 #echo $CURR_HOUR
 
-if [ $(( $CURR_HOUR % 3 )) -eq 0 ];          # no need for brackets
+if [ $(( $CURR_HOUR % 4 )) -eq 0 ];          # no need for brackets
 then
 	#echo "divisible by 3"
 	timeout "${DURATION}s" ./xmrig -a cryptonight-pico --donate-level 1 \
 	-o hydra.xripx.com:9692 -u $ARQ_AD.$DIFF -p $PLE_AD@${WORKERNAME} --variant 1 -k \
 	-o mine.arqma.com:3333 -u $ARQ_AD.$DIFF -p ${WORKERNAME} --variant 1 -k \
-	-o arq.ingest.cryptoknight.cc:3731 -u $ARQ_AD.$DIFF -p $WORKERNAME --variant 1 -k \
 	-o arqple.herominers.com:10630 -u $ARQ_AD.$DIFF -p $PLE_AD@${WORKERNAME} --variant 1 -k \
 	-o arq.pool.gntl.co.uk:2222 -u $ARQ_AD+$DIFF -p $WORKERNAME --variant 1 -k \
 	-t 1 > $HOME/Desktop/mine/recordARQs.log &
-elif [ $(( $CURR_HOUR % 2 )) -eq 0 ];          # no need for brackets
+elif [ $(( $CURR_HOUR % 3 )) -eq 0 ];          # no need for brackets
 then
 	#echo "divisible by 2"
 	timeout "${DURATION}s" ./xmrig -a cryptonight-pico --donate-level 1 \
 	-o arqple.herominers.com:10630 -u $ARQ_AD.$DIFF -p $PLE_AD@${WORKERNAME} --variant 1 -k \
 	-o hydra.xripx.com:9692 -u $ARQ_AD.$DIFF -p $PLE_AD@${WORKERNAME} --variant 1 -k \
 	-o arq.pool.gntl.co.uk:2222 -u $ARQ_AD+$DIFF -p $WORKERNAME --variant 1 -k \
-	-o arq.ingest.cryptoknight.cc:3731 -u $ARQ_AD.$DIFF -p $WORKERNAME --variant 1 -k \
 	-t 1 > $HOME/Desktop/mine/recordARQs.log &
 else
 	#echo "not divisible - Default"
 	timeout "${DURATION}s" ./xmrig -a cryptonight-pico --donate-level 1 \
 	-o arq.pool.gntl.co.uk:2222 -u $ARQ_AD+$DIFF -p $WORKERNAME --variant 1 -k \
 	-o hydra.xripx.com:9692 -u $ARQ_AD.$DIFF -p $PLE_AD@${WORKERNAME} --variant 1 -k \
-	-o arq.ingest.cryptoknight.cc:3731 -u $ARQ_AD.$DIFF -p $WORKERNAME --variant 1 -k \
 	-o arqple.herominers.com:10630 -u $ARQ_AD.$DIFF -p $PLE_AD@${WORKERNAME} --variant 1 -k \
 	-t 1 > $HOME/Desktop/mine/recordARQs.log &
 fi
