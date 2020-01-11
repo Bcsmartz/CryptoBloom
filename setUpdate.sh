@@ -14,10 +14,11 @@
 ###
 
 
-#mkdir -p $HOME/Desktop/mine
-#cd $HOME/Desktop/mine
-#git clone https://github.com/Bcsmartz/CryptoBloom.git
-#git checkout multimine
+mkdir -p $HOME/Desktop/mine
+cd $HOME/Desktop/mine
+git clone https://github.com/Bcsmartz/CryptoBloom.git
+git checkout multimine
 
 cd $HOME/Desktop/mine/CryptoBloom
+git stash
 git pull origin multimine
