@@ -23,26 +23,27 @@ if [ $(( $CURR_HOUR % 4 )) -eq 0 ];          # no need for brackets
 then
 	#echo "divisible by 3"
 	timeout "${DURATION}s" ./xmrig -a cryptonight-pico --donate-level 1 \
-	-o ca.arqma.herominers.com:10640 -u $ARQ_AD.$DIFF -p $WORKERNAME --variant 1 -k \
-	-o hydra.xripx.com:9692 -u $ARQ_AD.$DIFF -p $PLE_AD@${WORKERNAME} --variant 1 -k \
-	-o mine.arqma.com:3333 -u $ARQ_AD.$DIFF -p ${WORKERNAME} --variant 1 -k \
-	-o arq.pool.gntl.co.uk:2222 -u $ARQ_AD+$DIFF -p $WORKERNAME --variant 1 -k \
+	-o ca.arqma.herominers.com:10640 -u $ARQ_AD.$DIFF -p $WORKERNAME -a rx/arq -k \
+	-o hydra.xripx.com:9692 -u $ARQ_AD.$DIFF -p $PLE_AD@${WORKERNAME} -a rx/arq -k \
+	-o mine.arqma.com:3333 -u $ARQ_AD.$DIFF -p ${WORKERNAME} -a rx/arq -k \
+	-o arq.pool.gntl.co.uk:2222 -u $ARQ_AD+$DIFF -p $WORKERNAME -a rx/arq -k \
 	-t 1 > $HOME/Desktop/mine/recordARQs.log &
 elif [ $(( $CURR_HOUR % 3 )) -eq 0 ];          # no need for brackets
 then
 	#echo "divisible by 2"
 	timeout "${DURATION}s" ./xmrig -a cryptonight-pico --donate-level 1 \
-	-o ca.arqma.herominers.com:10640 -u $ARQ_AD.$DIFF -p $WORKERNAME --variant 1 -k \
-	-o hydra.xripx.com:9692 -u $ARQ_AD.$DIFF -p $PLE_AD@${WORKERNAME} --variant 1 -k \
-	-o arq.pool.gntl.co.uk:2222 -u $ARQ_AD+$DIFF -p $WORKERNAME --variant 1 -k \
+	-o ca.arqma.herominers.com:10640 -u $ARQ_AD.$DIFF -p $WORKERNAME -a rx/arq -k \
+	-o hydra.xripx.com:9692 -u $ARQ_AD.$DIFF -p $PLE_AD@${WORKERNAME} -a rx/arq -k \
+	-o mine.arqma.com:3333 -u $ARQ_AD.$DIFF -p ${WORKERNAME} -a rx/arq -k \
+	-o arq.pool.gntl.co.uk:2222 -u $ARQ_AD+$DIFF -p $WORKERNAME -a rx/arq -k \
 	-t 1 > $HOME/Desktop/mine/recordARQs.log &
 else
 	#echo "not divisible - Default"
 	timeout "${DURATION}s" ./xmrig -a cryptonight-pico --donate-level 1 \
-	-o ca.arqma.herominers.com:10640 -u $ARQ_AD.$DIFF -p $WORKERNAME --variant 1 -k \
-	-o arq.pool.gntl.co.uk:2222 -u $ARQ_AD+$DIFF -p $WORKERNAME --variant 1 -k \
-	-o hydra.xripx.com:9692 -u $ARQ_AD.$DIFF -p $PLE_AD@${WORKERNAME} --variant 1 -k \
-	-o ca.arqma.herominers.com:10640 -u $ARQ_AD.$DIFF -p $WORKERNAME --variant 1 -k \
+	-o ca.arqma.herominers.com:10640 -u $ARQ_AD.$DIFF -p $WORKERNAME -a rx/arq -k \
+	-o hydra.xripx.com:9692 -u $ARQ_AD.$DIFF -p $PLE_AD@${WORKERNAME} -a rx/arq -k \
+	-o mine.arqma.com:3333 -u $ARQ_AD.$DIFF -p ${WORKERNAME} -a rx/arq -k \
+	-o arq.pool.gntl.co.uk:2222 -u $ARQ_AD+$DIFF -p $WORKERNAME -a rx/arq -k \
 	-t 1 > $HOME/Desktop/mine/recordARQs.log &
 fi
 
