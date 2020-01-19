@@ -5,6 +5,9 @@ comm = MPI.COMM_WORLD
 rank = comm.Get_rank()
 size = comm.Get_size()
 
+# https://nyu-cds.github.io/python-mpi/05-collectives/
+# mpiexec -n 4 python $HOME/Desktop/mine/CryptoBloom/
+
 def integral(a_i, h, n):
     integ = 0.0
     for j in range(n):

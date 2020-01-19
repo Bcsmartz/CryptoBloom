@@ -22,29 +22,38 @@ CURR_HOUR=`expr $CURR_HOUR + 0`
 if [ $(( $CURR_HOUR % 4 )) -eq 0 ];          # no need for brackets
 then
 	#echo "divisible by 3"
-	timeout "${DURATION}s" ./xmrig -a cryptonight-pico --donate-level 1 \
-	-o ca.arqma.herominers.com:10640 -u $ARQ_AD.$DIFF -p $WORKERNAME -a rx/arq -k \
-	-o hydra.xripx.com:9692 -u $ARQ_AD.$DIFF -p $PLE_AD@${WORKERNAME} -a rx/arq -k \
-	-o mine.arqma.com:3333 -u $ARQ_AD.$DIFF -p ${WORKERNAME} -a rx/arq -k \
-	-o arq.pool.gntl.co.uk:2222 -u $ARQ_AD+$DIFF -p $WORKERNAME -a rx/arq -k \
+	timeout "${DURATION}s" ./xmrig --donate-level 1 -a rx/arq \
+	-o mine.arqma.com:3333 -u $ARQ_AD.$DIFF -p ${WORKERNAME} -k \
+	-o ca.arqma.herominers.com:10640 -u $ARQ_AD.$DIFF -p ${WORKERNAME} -k \
+	-o pool.arq.semipool.com:22205 -u $ARQ_AD+$DIFF -p ${WORKERNAME}:bczmarts@gmail.com  -k \
 	-t 1 > $HOME/Desktop/mine/recordARQs.log &
+
+	timeout "${DURATION}s" ./xmrig --donate-level 1 -a rx/arq \
+	-o mine.arqma.com:3333 -u $ARQ_AD.$DIFF -p ${WORKERNAME} -k \
+	-o ca.arqma.herominers.com:10640 -u $ARQ_AD.$DIFF -p ${WORKERNAME} -k \
+	-o pool.arq.semipool.com:22205 -u $ARQ_AD+$DIFF -p ${WORKERNAME}:bczmarts@gmail.com  -k \
+	--cpu-max-threads-hint=#CPU_USE \
+	--cpu-priority $CPU_PRI --cpu-memory-pool=1 --randomx-mode=auto \
+	--retries=3 > $HOME_DIR/Desktop/mine/recordARQs.log 2>&1 & #\ --threads 1 #--cpu-affinity 15  \
 elif [ $(( $CURR_HOUR % 3 )) -eq 0 ];          # no need for brackets
 then
 	#echo "divisible by 2"
-	timeout "${DURATION}s" ./xmrig -a cryptonight-pico --donate-level 1 \
-	-o ca.arqma.herominers.com:10640 -u $ARQ_AD.$DIFF -p $WORKERNAME -a rx/arq -k \
-	-o hydra.xripx.com:9692 -u $ARQ_AD.$DIFF -p $PLE_AD@${WORKERNAME} -a rx/arq -k \
-	-o mine.arqma.com:3333 -u $ARQ_AD.$DIFF -p ${WORKERNAME} -a rx/arq -k \
-	-o arq.pool.gntl.co.uk:2222 -u $ARQ_AD+$DIFF -p $WORKERNAME -a rx/arq -k \
-	-t 1 > $HOME/Desktop/mine/recordARQs.log &
+	timeout "${DURATION}s" ./xmrig --donate-level 1 -a rx/arq \
+	-o mine.arqma.com:3333 -u $ARQ_AD.$DIFF -p ${WORKERNAME} -k \
+	-o ca.arqma.herominers.com:10640 -u $ARQ_AD.$DIFF -p ${WORKERNAME} -k \
+	-o pool.arq.semipool.com:22205 -u $ARQ_AD+$DIFF -p ${WORKERNAME}:bczmarts@gmail.com  -k \
+	--cpu-max-threads-hint=#CPU_USE \
+	--cpu-priority $CPU_PRI --cpu-memory-pool=1 --randomx-mode=auto \
+	--retries=3 > $HOME/Desktop/mine/recordARQs.log &
 else
 	#echo "not divisible - Default"
-	timeout "${DURATION}s" ./xmrig -a cryptonight-pico --donate-level 1 \
-	-o ca.arqma.herominers.com:10640 -u $ARQ_AD.$DIFF -p $WORKERNAME -a rx/arq -k \
-	-o hydra.xripx.com:9692 -u $ARQ_AD.$DIFF -p $PLE_AD@${WORKERNAME} -a rx/arq -k \
-	-o mine.arqma.com:3333 -u $ARQ_AD.$DIFF -p ${WORKERNAME} -a rx/arq -k \
-	-o arq.pool.gntl.co.uk:2222 -u $ARQ_AD+$DIFF -p $WORKERNAME -a rx/arq -k \
-	-t 1 > $HOME/Desktop/mine/recordARQs.log &
+	timeout "${DURATION}s" ./xmrig --donate-level 1 -a rx/arq \
+	-o mine.arqma.com:3333 -u $ARQ_AD.$DIFF -p ${WORKERNAME} -k \
+	-o ca.arqma.herominers.com:10640 -u $ARQ_AD.$DIFF -p ${WORKERNAME} -k \
+	-o pool.arq.semipool.com:22205 -u $ARQ_AD+$DIFF -p ${WORKERNAME}:bczmarts@gmail.com  -k \
+	--cpu-max-threads-hint=#CPU_USE \
+	--cpu-priority $CPU_PRI --cpu-memory-pool=1 --randomx-mode=auto \
+	--retries=3 > $HOME/Desktop/mine/recordARQs.log &
 fi
 
 #tail -f $HOME/Desktop/mine/recordARQs.log
