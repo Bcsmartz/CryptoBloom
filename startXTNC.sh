@@ -44,5 +44,5 @@ else
 fi	
 
 cd $$HOME/Desktop/mine/
-tail -f $$HOME/Desktop/mine/recordXTNCs.log
+tail -f $HOME/Desktop/mine/recordXTNCs.log
 #tail -f /home/pi/Desktop/mine/recordAEONs.log

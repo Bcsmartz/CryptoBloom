@@ -4,10 +4,8 @@
 
 DURATION=$1 #3600
 WORKERNAME=$2 # Worker-Bee-Mining
-CPU_USE=$3 # 1-100%
-CPU_PRI=$4 # 0 1 2 3
-
-
+CPU_USE_PERCENT=$3 # 1-100%
+CPU_PRI_RANK=$4 # 0 1 2 3
 
 # PRE PURGE
 rm -f $HOME/Desktop/mine/recordARQs.log
@@ -30,7 +28,7 @@ then
 	-o ca.arqma.herominers.com:10640 -u $ARQ_AD.$DIFF -p ${WORKERNAME} -k \
 	-o arq.pool.gntl.co.uk:2222 -u $ARQ_AD+$DIFF -p ${WORKERNAME}:bczmarts@gmail.com -k \
 	-o mine.arqma.com:3333 -u $ARQ_AD.$DIFF -p ${WORKERNAME} -k \
-	--cpu-max-threads-hint=$CPU_USE --cpu-priority $CPU_PRI --randomx-mode=auto \
+	--cpu-max-threads-hint=$CPU_USE_PERCENT --cpu-priority $CPU_PRI_RANK --randomx-mode=auto \
 	--retries=3 > $HOME_DIR/Desktop/mine/recordARQs.log 2>&1 & #\ --cpu-memory-pool=1  --threads 1 #--cpu-affinity 15 --threads 1 #--cpu-affinity 15 --randomx-mode=auto \
 else
 	#echo "not divisible - Default"

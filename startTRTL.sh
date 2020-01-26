@@ -9,12 +9,9 @@ CPU_USE_PERCENT=$3 # 1-100%
 CPU_PRI_RANK=$4 # 0 1 2 3
 
 # PRE PURGE
-rm $HOME/Desktop/mine/recordLOKIs.log
+rm $HOME/Desktop/mine/recordTRTL.log
 
-LOKI_AD="LEak4Lxdgw2VBUbnrPJfWpB4grWhrq6gHM5dAD3cqu5vdSM5fgJEeGYED6BmYeD3R6VRTvR3oqzC3foTwoDLjG67TEYth7d"
-
-#WORKERNAME="Rai-Real-Pi-13"
-#WORKERNAME="Rai-13"
+TRTL_AD="TRTLuy38s5nALY1MoWbmoVSRCafuBibusa8mWuGvuKKXSgDidXQjE6RQovWEkjGs7ySLFXZkceykvijVDCgqtxLVcjXmXKQs8YW"
 
 cd $HOME/Desktop/mine/xmrig/build
 
@@ -26,14 +23,13 @@ echo $CURR_HOUR
 if [ $(( $CURR_HOUR % 1 )) -eq 0 ];          # no need for brackets
 then
     # Loki
-    timeout "${DURATION}s" ./xmrig --donate-level 1 -a rx/loki \
-    -o ca.loki.herominers.com:10110 -u ${LOKI_AD}.$DIFF -p $WORKERNAME:bczmarts@gmail.com -k \
-    -o loki.cnpool.cc:25333 -u ${LOKI_AD}.$DIFF -p $WORKERNAME -k \
+    timeout "${DURATION}s" ./xmrig --donate-level 1 -a chukwa \
+	-o ca.turtlecoin.herominers.com:10380 -u ${TRTL_AD}.$DIFF -p $WORKERNAME:bczmarts@gmail.com -k \
     --cpu-max-threads-hint=$CPU_USE_PERCENT --cpu-priority $CPU_PRI_RANK \
-    --log-file=$HOME/Desktop/mine/recordLOKIs.log 2>&1 &
+    --log-file=$HOME/Desktop/mine/recordTRTL.log 2>&1 &
 
 fi
 
 cd $HOME/Desktop/mine/
-tail -f $HOME/Desktop/mine/recordLOKIs.log
+tail -f $HOME/Desktop/mine/recordTRTL.log
 #tail -f /home/pi/Desktop/mine/recordAEONs.log
