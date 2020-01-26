@@ -2,39 +2,38 @@
 
 echo $1 $2 $3 $4
 
-CPU_USE=$1
-CPU_PRI=$2
-DURATION=$3 #3600
+#echo $1 $2
 
-cd 
-HOME_DIR=$(pwd)
+DURATION=$1 #3600
+WORKERNAME=$2 # Worker-Bee-Mining
+
+CPU_USE_PERCENT=$3 # 1-100%
+CPU_PRI_RANK=$4 # 0 1 2 3
+
+CURR_HOUR=`date +%H`
+CURR_HOUR=`expr $CURR_HOUR + 0`
+#echo $CURR_HOUR
 
 # PRE PURGE
-rm $HOME_DIR/Desktop/mine/recordXTNCs.log
+rm -f $HOME/Desktop/mine/recordXTNCs.log
 
-XTNC_AD="XtazhWGcozBXaVZGUochAm4VcJgpvLR8hVLJE9EY9VzwBgoWpNhV1GDYbwUthao444C4SKDYi2KR324a84MzgjiKScaBa9viZu5"
-PLE_AD="PLeazPhnC1qXe4Vg4CVoLaFR6vNtkyTvMGoWnRJ8eEP7jTEvFKMyxRf6NMPKisqFo8JDLPT6BuuGoYkQX6xuL74R6svnyi59Su"
-TRTL_AD="TRTLuy38s5nALY1MoWbmoVSRCafuBibusa8mWuGvuKKXSgDidXQjE6RQovWEkjGs7ySLFXZkceykvijVDCgqtxLVcjXmXKQs8YW"
+# x-cash
+XTNC_AD="XCA1raAoXoG3PemiekrEqrcGd9XDezvBW38TGywZxYMPfRfFj1MNzwHHAnWrsn4523dbNVRfS1Xh8YqrCrDo4tBp6c3hEchztx"
 
-#WORKERNAME="Rai-Real-Pi-13"
-#WORKERNAME="Rai-13"
-WORKERNAME=$4 #"Rai-Black-13"
+cd $HOME/Desktop/mine/xmrig/build
 
-cd $HOME_DIR/Desktop/mine/xmrig/build
-export DIFF=350
-export CURR_HOUR=`date +%H`
-export CURR_HOUR=`expr $CURR_HOUR + 0`
-echo $CURR_HOUR
-if [ $(( $CURR_HOUR % 2 )) -eq 0 ];          # no need for brackets
+DIFF=350
+
+cd $HOME/Desktop/mine/xmrig/build
+
+if [ $(( $CURR_HOUR % 1 )) -eq 0 ];          # no need for brackets
 then
 	# Best
 	echo "divisible by 2"
-	timeout "${DURATION}s" ./xmrig -a cryptonight-pico --donate-level 1 \
-	-o xtncple.herominers.com:10620 -u $XTNC_AD.$DIFF -p $PLE_AD@${WORKERNAME} --variant 1 -k \
-	-o hydra.xripx.com:8692 -u $XTNC_AD.$DIFF -p $PLE_AD@${WORKERNAME} --variant 1 -k \
-	-o xtnc.cnpool.cc:32673 -u $XTNC_AD.${DIFF}@${WORKERNAME} -p $PLE_AD --variant 1 -k \
-	-o pool.xtendcash.hashvault.pro:3333 -u $XTNC_AD:$TRTL_AD -p ${WORKERNAME}:bczmarts@gmail.com -k \
-	--max-cpu-usage $CPU_USE --cpu-priority $CPU_PRI -t $CPU_PRI > $HOME_DIR/Desktop/mine/recordXTNCs.log 2>&1 &
+	timeout "${DURATION}s" ./xmrig --donate-level 1 \
+	-o xcash.herominers.com:10490 -u ${XTNC_AD}.${DIFF} -p ${WORKERNAME}:bczmarts@gmail.com -a cn/double -k \
+	--cpu-max-threads-hint=$CPU_USE_PERCENT --cpu-priority $CPU_PRI_RANK \
+	> $HOME/Desktop/mine/recordXTNCs.log &
 else
 	# Best
 	echo "not divisible - Default"
@@ -43,7 +42,7 @@ else
 	-o xtncple.herominers.com:10620 -u $XTNC_AD.$DIFF -p $PLE_AD@${WORKERNAME} --variant 1 -k \
 	-o xtnc.cnpool.cc:32673 -u $XTNC_AD.${DIFF}@${WORKERNAME} -p $PLE_AD --variant 1 -k \
 	-o pool.xtendcash.hashvault.pro:3333 -u $XTNC_AD:$TRTL_AD -p ${WORKERNAME}:bczmarts@gmail.com -k \
-	--max-cpu-usage $CPU_USE --cpu-priority $CPU_PRI -t $CPU_PRI > $HOME_DIR/Desktop/mine/recordXTNCs.log 2>&1 &
+	-t 1 > $HOME/Desktop/mine/recordXTNCs.log &
 fi
 
 cd $HOME_DIR/Desktop/mine/
