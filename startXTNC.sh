@@ -31,7 +31,7 @@ then
 	timeout "${DURATION}s" ./xmrig --donate-level 1 \
 	-o xcash.herominers.com:10490 -u ${XTNC_AD}.${DIFF} -p ${WORKERNAME}:bczmarts@gmail.com -a cn/double -k \
 	--cpu-max-threads-hint=$CPU_USE_PERCENT --cpu-priority $CPU_PRI_RANK \
-	> $HOME/Desktop/mine/recordXTNCs.log &
+	--log-file=$HOME/Desktop/mine/recordXTNCs.log 2>&1 &
 else
 	# Best
 	echo "not divisible - Default"
