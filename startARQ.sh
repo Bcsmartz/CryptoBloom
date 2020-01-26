@@ -4,6 +4,7 @@ echo "$0 $1 $2 $3 $4"
 
 DURATION=$1 #3600
 WORKERNAME=$2 # Worker-Bee-Mining
+
 CPU_USE_PERCENT=$3 # 1-100%
 CPU_PRI_RANK=$4 # 0 1 2 3
 
@@ -16,7 +17,7 @@ DIFF=350
 cd $HOME/Desktop/mine/xmrig/build
 
 # PRE PURGE
-rm -f $HOME/Desktop/mine/recordARQs.log
+rm -rf $HOME/Desktop/mine/recordARQs.log
 
 # ADDRESS
 ARQ_AD="ar41hWuB7ePdahum34BkJG8JWjJrRFqim9muTA5CmndHLyCpo6Ja5jGNXoqGHXpYr5gWdux8Nm1q1UiM67XsfC2u32jVR1R1F"

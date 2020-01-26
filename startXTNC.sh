@@ -15,7 +15,7 @@ CURR_HOUR=`expr $CURR_HOUR + 0`
 #echo $CURR_HOUR
 
 # PRE PURGE
-rm -f $HOME/Desktop/mine/recordXTNCs.log
+rm -rf $HOME/Desktop/mine/recordXTNCs.log
 
 # x-cash
 XTNC_AD="XCA1raAoXoG3PemiekrEqrcGd9XDezvBW38TGywZxYMPfRfFj1MNzwHHAnWrsn4523dbNVRfS1Xh8YqrCrDo4tBp6c3hEchztx"
