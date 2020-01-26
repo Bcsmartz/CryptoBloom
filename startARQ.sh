@@ -30,7 +30,7 @@ then
 	-o arq.pool.gntl.co.uk:2222 -u $ARQ_AD+$DIFF -p ${WORKERNAME}:bczmarts@gmail.com -k \
 	-o mine.arqma.com:3333 -u $ARQ_AD.$DIFF -p ${WORKERNAME} -k \
 	--cpu-max-threads-hint=$CPU_USE_PERCENT --cpu-priority $CPU_PRI_RANK --randomx-mode=auto \
-	--retries=3 > $HOME_DIR/Desktop/mine/recordARQs.log 2>&1 & #\ --cpu-memory-pool=1  --threads 1 #--cpu-affinity 15 --threads 1 #--cpu-affinity 15 --randomx-mode=auto \
+	--retries=3 > $$HOME/Desktop/mine/recordARQs.log 2>&1 & #\ --cpu-memory-pool=1  --threads 1 #--cpu-affinity 15 --threads 1 #--cpu-affinity 15 --randomx-mode=auto \
 else
 	#echo "not divisible - Default"
 	timeout "${DURATION}s" ./xmrig --donate-level 1 -a rx/arq \
@@ -44,6 +44,6 @@ else
 	
 fi
 
-cd $HOME_DIR/Desktop/mine/
-tail -f $HOME_DIR/Desktop/mine/recordARQs.log
+cd $HOME/Desktop/mine/
+tail -f $HOME/Desktop/mine/recordARQs.log
 #tail -f /home/pi/Desktop/mine/recordAEONs.log

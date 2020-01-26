@@ -20,8 +20,6 @@ rm -f $HOME/Desktop/mine/recordXTNCs.log
 # x-cash
 XTNC_AD="XCA1raAoXoG3PemiekrEqrcGd9XDezvBW38TGywZxYMPfRfFj1MNzwHHAnWrsn4523dbNVRfS1Xh8YqrCrDo4tBp6c3hEchztx"
 
-cd $HOME/Desktop/mine/xmrig/build
-
 DIFF=350
 
 cd $HOME/Desktop/mine/xmrig/build
@@ -43,8 +41,8 @@ else
 	-o xtnc.cnpool.cc:32673 -u $XTNC_AD.${DIFF}@${WORKERNAME} -p $PLE_AD --variant 1 -k \
 	-o pool.xtendcash.hashvault.pro:3333 -u $XTNC_AD:$TRTL_AD -p ${WORKERNAME}:bczmarts@gmail.com -k \
 	-t 1 > $HOME/Desktop/mine/recordXTNCs.log &
-fi
+fi	
 
-cd $HOME_DIR/Desktop/mine/
-tail -f $HOME_DIR/Desktop/mine/recordXTNCs.log
+cd $$HOME/Desktop/mine/
+tail -f $$HOME/Desktop/mine/recordXTNCs.log
 #tail -f /home/pi/Desktop/mine/recordAEONs.log
