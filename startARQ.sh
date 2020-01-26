@@ -29,10 +29,11 @@ then
 	echo "divisible by 3"
 
 	timeout "${DURATION}s" ./xmrig --donate-level 1 -a rx/arq \
-	-o mine.arqma.com:3333 -u $ARQ_AD.$DIFF -p ${WORKERNAME} -k \
 	-o ca.arqma.herominers.com:10640 -u $ARQ_AD.$DIFF -p ${WORKERNAME} -k \
+	-o arq.pool.gntl.co.uk:2222 -u $ARQ_AD+$DIFF -p ${WORKERNAME}:bczmarts@gmail.com -k \
+	-o mine.arqma.com:3333 -u $ARQ_AD.$DIFF -p ${WORKERNAME} -k \
 	-o pool.arq.semipool.com:22205 -u $ARQ_AD+$DIFF -p ${WORKERNAME}:bczmarts@gmail.com  -k \
-	--cpu-max-threads-hint=#CPU_USE \
+	--cpu-max-threads-hint=$CPU_USE \
 	--cpu-priority $CPU_PRI --cpu-memory-pool=1 --randomx-mode=auto \
 	--retries=3 > $HOME_DIR/Desktop/mine/recordARQs.log 2>&1 & #\ --threads 1 #--cpu-affinity 15  \
 
@@ -40,19 +41,22 @@ elif [ $(( $CURR_HOUR % 2 )) -eq 0 ];          # no need for brackets
 then
 	echo "divisible by 2"
 	timeout "${DURATION}s" ./xmrig --donate-level 1 -a rx/arq \
-	-o ca.arqma.herominers.com:10640 -u $ARQ_AD.$DIFF -p ${WORKERNAME} -k \
 	-o mine.arqma.com:3333 -u $ARQ_AD.$DIFF -p ${WORKERNAME} -k \
+	-o ca.arqma.herominers.com:10640 -u $ARQ_AD.$DIFF -p ${WORKERNAME} -k \
+	-o arq.pool.gntl.co.uk:2222 -u $ARQ_AD+$DIFF -p ${WORKERNAME}:bczmarts@gmail.com -k \
 	-o pool.arq.semipool.com:22205 -u $ARQ_AD+$DIFF -p ${WORKERNAME}:bczmarts@gmail.com  -k \
-	--cpu-max-threads-hint=#CPU_USE \
+	--cpu-max-threads-hint=$CPU_USE \
 	--cpu-priority $CPU_PRI --cpu-memory-pool=1 --randomx-mode=auto \
 	--retries=3 > $HOME_DIR/Desktop/mine/recordARQs.log 2>&1 & #\ --threads 1 #--cpu-affinity 15  \
+	
 else
 	echo "not divisible - Default"
 	timeout "${DURATION}s" ./xmrig --donate-level 1 -a rx/arq \
+	-o arq.pool.gntl.co.uk:2222 -u $ARQ_AD+$DIFF -p ${WORKERNAME}:bczmarts@gmail.com -k \
 	-o pool.arq.semipool.com:22205 -u $ARQ_AD+$DIFF -p ${WORKERNAME}:bczmarts@gmail.com  -k \
 	-o mine.arqma.com:3333 -u $ARQ_AD.$DIFF -p ${WORKERNAME} -k \
 	-o ca.arqma.herominers.com:10640 -u $ARQ_AD.$DIFF -p ${WORKERNAME} -k \
-	--cpu-max-threads-hint=#CPU_USE \
+	--cpu-max-threads-hint=$CPU_USE \
 	--cpu-priority $CPU_PRI --cpu-memory-pool=1 --randomx-mode=auto \
 	--retries=3 > $HOME_DIR/Desktop/mine/recordARQs.log 2>&1 & #\ --threads 1 #--cpu-affinity 15  \
 	
