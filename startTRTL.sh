@@ -24,7 +24,7 @@ if [ $(( $CURR_HOUR % 1 )) -eq 0 ];          # no need for brackets
 then
     # Loki
     timeout "${DURATION}s" ./xmrig --donate-level 1 -a chukwa \
-	-o ca.turtlecoin.herominers.com:10380 -u ${TRTL_AD}.$DIFF -p $WORKERNAME:bczmarts@gmail.com -k \
+	-o ca.turtlecoin.herominers.com:10380 -u ${TRTL_AD}.$DIFF -p $WORKERNAME -k \
     --cpu-max-threads-hint=$CPU_USE_PERCENT --cpu-priority $CPU_PRI_RANK \
     --log-file=$HOME/Desktop/mine/recordTRTL.log 2>&1 &
 
