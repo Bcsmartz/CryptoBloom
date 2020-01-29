@@ -24,23 +24,28 @@ DIFF=350
 
 cd $HOME/Desktop/mine/xmrig/build
 
-if [ $(( $CURR_HOUR % 1 )) -eq 0 ];          # no need for brackets
+if [ $(( $CURR_HOUR % 2 )) -eq 0 ];          # no need for brackets
 then
 	# Best
 	echo "divisible by 2"
 	timeout "${DURATION}s" ./xmrig --donate-level 1 \
+	-o Pool.XCA.CryptoPool.Space:3333 -u ${XTNC_AD}+${DIFF} -p ${WORKERNAME}:bczmarts@gmail.com -a cn/double -k \
 	-o ca.xcash.herominers.com:10490 -u ${XTNC_AD}.${DIFF} -p ${WORKERNAME} -a cn/double -k \
+	-o xcash.luckypool.io:4466 -u ${XTNC_AD}.${DIFF} -p ${WORKERNAME} -a cn/double -k \
+	-o xcash.steadyhash.org:3753 -u ${XTNC_AD}+${DIFF} -p ${WORKERNAME} -a cn/double -k \
 	--cpu-max-threads-hint=$CPU_USE_PERCENT --cpu-priority $CPU_PRI_RANK \
 	--log-file=$HOME/Desktop/mine/recordXTNCs.log 2>&1 &
+
 else
 	# Best
 	echo "not divisible - Default"
-	timeout "${DURATION}s" ./xmrig -a cryptonight-pico --donate-level 1 \
-	-o hydra.xripx.com:8692 -u $XTNC_AD.$DIFF -p $PLE_AD@${WORKERNAME} --variant 1 -k \
-	-o xtncple.herominers.com:10620 -u $XTNC_AD.$DIFF -p $PLE_AD@${WORKERNAME} --variant 1 -k \
-	-o xtnc.cnpool.cc:32673 -u $XTNC_AD.${DIFF}@${WORKERNAME} -p $PLE_AD --variant 1 -k \
-	-o pool.xtendcash.hashvault.pro:3333 -u $XTNC_AD:$TRTL_AD -p ${WORKERNAME}:bczmarts@gmail.com -k \
-	-t 1 > $HOME/Desktop/mine/recordXTNCs.log &
+	timeout "${DURATION}s" ./xmrig --donate-level 1 \
+	-o ca.xcash.herominers.com:10490 -u ${XTNC_AD}.${DIFF} -p ${WORKERNAME} -a cn/double -k \
+	-o xcash.luckypool.io:4466 -u ${XTNC_AD}.${DIFF} -p ${WORKERNAME} -a cn/double -k \
+	-o Pool.XCA.CryptoPool.Space:3333 -u ${XTNC_AD}+${DIFF} -p ${WORKERNAME}:bczmarts@gmail.com -a cn/double -k \
+	-o xcash.steadyhash.org:3753 -u ${XTNC_AD}+${DIFF} -p ${WORKERNAME} -a cn/double -k \
+	--cpu-max-threads-hint=$CPU_USE_PERCENT --cpu-priority $CPU_PRI_RANK \
+	--log-file=$HOME/Desktop/mine/recordXTNCs.log 2>&1 &
 fi	
 
 cd $$HOME/Desktop/mine/
