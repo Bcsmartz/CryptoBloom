@@ -23,7 +23,7 @@ rm -rf $HOME/Desktop/mine/recordARQs.log
 ARQ_AD="ar41hWuB7ePdahum34BkJG8JWjJrRFqim9muTA5CmndHLyCpo6Ja5jGNXoqGHXpYr5gWdux8Nm1q1UiM67XsfC2u32jVR1R1F"
 
 # ARQ
-if [ $(( $CURR_HOUR % 2 )) -eq 0 ];          # no need for brackets
+if [[ $(( $CURR_HOUR % 3 )) -eq 0 ]] || [[ $(( $CURR_HOUR % 5 )) -eq 0 ]];          # no need for brackets
 then
 	#echo "divisible by 3"
 	timeout "${DURATION}s" ./xmrig --donate-level 1 -a rx/arq \
